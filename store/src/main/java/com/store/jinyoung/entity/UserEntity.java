@@ -1,11 +1,14 @@
 package com.store.jinyoung.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,21 +19,32 @@ import lombok.Setter;
 public class UserEntity {
 	
 	@Id
-	@Column(name = "id", insertable = false, updatable = false)
+    @Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "user_name", insertable = false, updatable = false)
-	private String username;
+	@Column(name = "user_name")
+	private String userName;
 	
-	@Column(name = "user_email", insertable = false, updatable = false)
-	private String email;
+	@Column(name = "provider")
+	private String provider;
 	
-	@Column(name = "role", insertable = false, updatable = false)
+	@Column(name = "user_email")
+	private String userEmail;
+	
+	@Column(name = "role")
 	private String role;
 
-	@Column(name = "provider", insertable = false, updatable = false)
-	private String provider;
+	
+	
+	public String getProvider() {
+		return provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+	
 	
 	public Long getId() {
 		return id;
@@ -41,19 +55,19 @@ public class UserEntity {
 	}
 
 	public String getUsername() {
-		return username;
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setuserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {
-		return email;
+		return userEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public String getRole() {
@@ -64,12 +78,12 @@ public class UserEntity {
 		this.role = role;
 	}
 
-	public String getProvider() {
-		return provider;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setProvider(String provider) {
-		this.provider = provider;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 }

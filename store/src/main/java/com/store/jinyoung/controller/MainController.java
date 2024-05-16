@@ -9,8 +9,15 @@ public class MainController {
 
 	@GetMapping("/")
 	public String mainAPI() {	
-		return "/store/jinyoung/main";
+		return "store/jinyoung/main";
 		
 	}
 	
+	@GetMapping("/index")
+	public String mainpage() {	
+		return "index";
+		
+	
+	}
+
 }

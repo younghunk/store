@@ -10,6 +10,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import com.store.jinyoung.service.CustomOAuth2UserService;
 
 
+
+
 @Configuration
 @EnableMethodSecurity
 public class SpringSecurityConfig {
@@ -28,9 +30,10 @@ public class SpringSecurityConfig {
     	.csrf().disable()
     	.cors().and()
     	.authorizeHttpRequests()
-    	.requestMatchers("/index","/static","*/board/**", "/", "/oauth2/**", "/login/**").permitAll()
+    	.antMatchers("/index","/static","*/board/**", "/", "/oauth2/**", "/login/**").permitAll()
     	.and()
     	.oauth2Login()
+    	.loginPage("/")
     	 .userInfoEndpoint()
          .userService(customOAuth2UserService);
     	
