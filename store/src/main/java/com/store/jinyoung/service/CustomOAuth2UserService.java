@@ -60,9 +60,9 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 	    if(existData == null) {
 	        // DB에 해당 사용자 정보가 없는 경우 새로운 UserEntity 생성하여 저장
 	        UserEntity userEntity = new UserEntity();
-	        userEntity.setuserName(oAuth2Response.getName());
+	        userEntity.setUserName(oAuth2Response.getName());
 	        userEntity.setProvider(oAuth2Response.getProvider());       
-	        userEntity.setEmail(oAuth2Response.getEmail());
+	        userEntity.setUserEmail(oAuth2Response.getEmail());
 	        userEntity.setRole(role);
 	        
 	        userRepository.save(userEntity);

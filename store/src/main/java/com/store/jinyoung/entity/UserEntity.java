@@ -32,58 +32,11 @@ public class UserEntity {
 	@Column(name = "user_email")
 	private String userEmail;
 	
+	@Column(name ="user_pw")
+	private String userPw;
+	
 	@Column(name = "role")
 	private String role;
 
-	
-	
-	public String getProvider() {
-		return provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-	}
-	
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return userName;
-	}
-
-	public void setuserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getEmail() {
-		return userEmail;
-	}
-
-	public void setEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
 	
 }
