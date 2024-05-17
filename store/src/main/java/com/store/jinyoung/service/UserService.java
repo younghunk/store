@@ -33,7 +33,4 @@ private final UserRepository userRepository;
 	        userEntity.setRole("ROLE_USER");
 	        userRepository.save(userEntity);	        
 	    }
-
-	
-
 }

@@ -17,7 +17,7 @@ public class MainController {
 
 	@GetMapping("/")
 	public String mainAPI() {	
-		return "store/jinyoung/main";
+		return "main";
 	}
 	
 	@GetMapping("/index")

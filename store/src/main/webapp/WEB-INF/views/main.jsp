@@ -13,10 +13,7 @@ String ctxPath = request.getContextPath();
 <head>
 <meta charset="UTF-8">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<link rel="stylesheet" type="text/css"	href="<%=ctxPath%>/resources/css/bootstrap.min.css">
 <script src="../resources/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 
 <style type="text/css">
@@ -66,7 +63,7 @@ $(document).ready(function(){
                     </div>
                     <div class="button-login-box" >
                         <button id= "localLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">로그인</button>
-                        <button id= "googleLogin" type="button" class="btn btn-google btn-xs" style="width:30%">구글</button>
+                        <button id= "googleLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">구글</button>
                         <button id= "naverLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">네이버</button>
                     </div>
                 </div>
