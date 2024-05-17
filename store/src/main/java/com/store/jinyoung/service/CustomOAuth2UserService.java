@@ -69,10 +69,8 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 	    }
 	    else {
 	    	return oAuth2User;
-	    }
-	    
+	    }	    
 	    // 사용자 정보와 역할(role)을 이용하여 CustomOAuth2User 객체 생성하여 반환
 	    return new CustomOAuth2User(oAuth2Response, role);
-	}
-	
+	}	
 }
