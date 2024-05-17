@@ -2,12 +2,19 @@ package com.store.jinyoung.entity;
 
 
 
+import java.util.Collection;
+import java.util.Collections;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +23,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name="user")
-public class UserEntity {
+public class UserEntity implements UserDetails{
 	
 	@Id
     @Column(name = "id")
@@ -38,5 +45,45 @@ public class UserEntity {
 	@Column(name = "role")
 	private String role;
 
+
+	 @Override
+	    public String getPassword() {
+	        return this.userPw;
+	    }
+	
+	    @Override
+	    public String getUsername() {
+	        return this.userEmail;
+	    }
+
+
+	    public String getUserName(){
+	        return this.userName;
+	    }
+	
+	    @Override
+	    public boolean isAccountNonExpired() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isAccountNonLocked() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isCredentialsNonExpired() {
+	        return true;
+	    }
+
+	    @Override
+	    public boolean isEnabled() {
+	        return true;
+	    }
+
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+			  return Collections.singletonList(new SimpleGrantedAuthority(this.role));
+		}
 	
 }

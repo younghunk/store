@@ -32,6 +32,8 @@ public class SpringSecurityConfig {
 	@Autowired
 	UserService userService;
 
+	@Autowired
+	CustomAuthFailureHandler customFailureHandler;
      
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -41,8 +43,14 @@ public class SpringSecurityConfig {
     	.authorizeHttpRequests()
     	.antMatchers("/index","/static","*/board/**", "/", "/oauth2/**", "/login/**").permitAll()
     	.and()
-    	.oauth2Login()
-    	.loginPage("/")
+    	 .formLogin()
+         .loginPage("/")
+         .loginProcessingUrl("/loginform")
+         .defaultSuccessUrl("/index")	
+         .failureHandler(customFailureHandler) // 로그인 실패 핸들러
+         .and()
+    	 .oauth2Login()
+    	 .loginPage("/")
     	 .userInfoEndpoint()
          .userService(customOAuth2UserService);
     	
@@ -54,5 +62,5 @@ public class SpringSecurityConfig {
         return new BCryptPasswordEncoder();
     }
     
- 
+
 }
