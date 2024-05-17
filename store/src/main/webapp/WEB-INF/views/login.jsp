@@ -55,25 +55,37 @@ $(document).ready(function(){
 <body>
     <div id="container">
         <div id="loginBox" th:if="${info eq '로그인해주세요'}">
-            <form name="loginFrm">
+             <form action="/loginform" method="post">
                 <div id="loginBoxTitle">Login</div>
                 <div id="inputBox">
                     <div class="input-form-box">
-                        <span>아이디 </span><input type="text" name="user_id" class="form-control">
+                        <span>아이디 </span>
+                        <input type="text" name="username" class="form-control">
+                        
                     </div>
                     <div class="input-form-box">
-                        <span>비밀번호 </span><input type="password" name="user_pwd" class="form-control">
+                        <span>비밀번호 </span><input type="text" id="userPw"  name="password" class="form-control">
                     </div>
+<<<<<<< HEAD
                     <div class="button-login-box" >
                         <button id= "localLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">로그인</button>
                         <button id= "googleLogin" type="button" class="btn btn-google btn-xs" style="width:30%">구글</button>
                         <button id= "naverLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">네이버</button>
+=======
+                    <div>
+                            <button id="join" type="button" class="btn btn-primary btn-xs" style="width:30%" onclick="location.href='/join'">회원가입</button>
+                            <button id="localLogin" type="submit" class="btn btn-primary btn-xs" style="width:30%">로그인</button>
+                    </div>
+                    <div class="button-login-box">
+                        <button id="googleLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">구글 로그인</button>
+                        <button id="naverLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">네이버 로그인</button>
+>>>>>>> branch 'main' of https://github.com/younghunk/store.git
                     </div>
                 </div>
             </form>
         </div>
         <div th:if="${info ne '로그인해주세요'}">
-            <p th:text="${info}" />
+            <p th:text="${info}"></p>
         </div>
     </div>
 </body>
