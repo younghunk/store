@@ -1,13 +1,7 @@
 package com.store.jinyoung.entity;
 
-<<<<<<< HEAD
-=======
-
-
 import java.util.Collection;
 import java.util.Collections;
-
->>>>>>> branch 'main' of https://github.com/younghunk/store.git
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

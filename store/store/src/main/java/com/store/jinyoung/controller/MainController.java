@@ -20,11 +20,7 @@ public class MainController {
 
 	@GetMapping("/")
 	public String mainAPI() {	
-<<<<<<< HEAD
-		return "main";
-=======
 		return "login";
->>>>>>> branch 'main' of https://github.com/younghunk/store.git
 	}
 	
 	@GetMapping("/index")
