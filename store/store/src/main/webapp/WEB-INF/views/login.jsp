@@ -13,10 +13,7 @@ String ctxPath = request.getContextPath();
 <head>
 <meta charset="UTF-8">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<link rel="stylesheet" type="text/css"	href="<%=ctxPath%>/resources/css/bootstrap.min.css">
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <style type="text/css">
@@ -66,10 +63,6 @@ $(document).ready(function(){
                     <div class="input-form-box">
                         <span>비밀번호 </span><input type="text" id="userPw"  name="password" class="form-control">
                     </div>
-                    <div class="button-login-box" >
-                        <button id= "localLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">로그인</button>
-                        <button id= "googleLogin" type="button" class="btn btn-google btn-xs" style="width:30%">구글</button>
-                        <button id= "naverLogin" type="button" class="btn btn-primary btn-xs" style="width:30%">네이버</button>
                     <div>
                             <button id="join" type="button" class="btn btn-primary btn-xs" style="width:30%" onclick="location.href='/join'">회원가입</button>
                             <button id="localLogin" type="submit" class="btn btn-primary btn-xs" style="width:30%">로그인</button>

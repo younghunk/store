@@ -23,8 +23,9 @@ private final UserRepository userRepository;
 	}
 	
 	  @Override
+	  // userDetail 사용해서 db 로그인 인증 검사
 	    public UserEntity loadUserByUsername(String userEmail) throws UsernameNotFoundException {
-	        //여기서 받은 유저 패스워드와 비교하여 로그인 인증
+
 	        UserEntity userEntity = userRepository.findByuserEmail(userEmail);
 	        if (userEntity == null){
 	            throw new UsernameNotFoundException("User not authorized.");
@@ -32,7 +33,7 @@ private final UserRepository userRepository;
 	        return userEntity;
 	    }
 	
-
+	  	// 도메인 로그인시 db 저장
        	@Transactional
 	    public void joinUser(UserEntity userEntity){
 	        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -43,4 +44,14 @@ private final UserRepository userRepository;
 	        userEntity.setRole("ROLE_USER");
 	        userRepository.save(userEntity);	        
 	    }
+       	
+       	// 아이디 중복 검사
+       	@Transactional
+       	public boolean existsByuserEmail(String userEmail){		
+       	    return userRepository.existsByuserEmail(userEmail);
+       	}
+
+
+	
+
 }

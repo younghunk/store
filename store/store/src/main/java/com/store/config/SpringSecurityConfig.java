@@ -51,6 +51,7 @@ public class SpringSecurityConfig {
          .and()
     	 .oauth2Login()
     	 .loginPage("/")
+    	 .defaultSuccessUrl("/index")	
     	 .userInfoEndpoint()
          .userService(customOAuth2UserService);
     	

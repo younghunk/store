@@ -6,4 +6,5 @@ import com.store.jinyoung.entity.UserEntity;
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 	UserEntity findByuserEmail(String userEmail);
+    boolean existsByuserEmail(String userEmail);
 }

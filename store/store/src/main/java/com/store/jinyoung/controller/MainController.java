@@ -34,11 +34,13 @@ public class MainController {
         return "join";
     }
     
+    //회원가입
     @PostMapping("/join")
     public String signUp(UserEntity userEntity) {
         userService.joinUser(userEntity);
         return "redirect:/";
     }
+    
     
     @GetMapping("/loginerror")
     public String loginsearch(@RequestParam(value = "error", required = false) String error,
@@ -50,16 +52,26 @@ public class MainController {
         return "login";
     }
     
+    // 로그인
     @PostMapping("/loginform")
     @ResponseBody
     public String processLogin(@RequestParam("username") String userEmail, @RequestParam("password") String password) {
         try {
-            // Spring Security의 loadUserByUsername 메소드를 호출하여 인증을 수행합니다.
+            // Spring Security의 loadUserByUsername 메소드를 호출하여 인증을 수행
             UserEntity userEntity = userService.loadUserByUsername(userEmail);        
             return "success";
         } catch (UsernameNotFoundException e) {
-            // 로그인 실패 시에는 예외 메시지를 반환합니다.
+            // 로그인 실패 시에는 예외 메시지를 반환
             return e.getMessage();
         }
     }
+    
+    //아이디 중복 확인
+	@PostMapping("/idCheck")
+	@ResponseBody
+    public boolean idOverlap(@RequestParam("userEmail") String userEmail) throws Exception {
+        boolean type = userService.existsByuserEmail(userEmail);
+        return type;  
+	 }
+    
 }
