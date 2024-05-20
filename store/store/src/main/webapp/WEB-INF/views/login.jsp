@@ -61,7 +61,7 @@ $(document).ready(function(){
                         
                     </div>
                     <div class="input-form-box">
-                        <span>비밀번호 </span><input type="text" id="userPw"  name="password" class="form-control">
+                        <span>비밀번호 </span><input type="password" id="userPw"  name="password" class="form-control">
                     </div>
                     <div>
                             <button id="join" type="button" class="btn btn-primary btn-xs" style="width:30%" onclick="location.href='/join'">회원가입</button>
